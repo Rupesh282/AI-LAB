@@ -1,2 +1,2 @@
-# Compiler
-Compiler for micro language
+# AI
+BFS , DFS , DFID
