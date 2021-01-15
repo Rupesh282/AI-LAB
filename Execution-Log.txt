@@ -1,0 +1,1358 @@
+corvus@Corvus:/mnt/c/Users/Corvus$ cd Documents/
+corvus@Corvus:/mnt/c/Users/Corvus/Documents$ cd CSE\ LAB\ VI\ Semester/
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester$ cd AI\ Lab/
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab$ cd AI-assignments/
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments$ ls
+'CS 312 _ Assignment 1 Test Cases.docx'               Statistics.xlsx                         '~$Statistics.xlsx'
+'CS 312_ Artificial Intelligence Laboratory 1.docx'   lab1
+ README.md                                           '~$ 312 _ Assignment 1 Test Cases.docx'
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments$ cd lab1/
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ls
+a.out  b.cc  in1  in2  in3  in4  in5  in6  in7
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ cat in1
+2
++--+--+--+--+
+   |     |  |
++  +  +  +  +
+|     |     |
++--+--+  +--+
+|     |     |
++  +  +--+  +
+|  |        *
++--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ cat in2
+2
++--+--+--+--+--+
+      |     |  |
++--+  +  +  +  +
+|     |  |     |
++  +--+  +--+  +
+|  |        |  |
++  +--+--+--+  +
+|        |     |
++  +--+  +  +  +
+|     |     |  *
++--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ cat in3
+2
++--+--+--+
+      |  |
++  +  +  +
+|  |     |
++  +--+--+
+|        *
++--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ cat in4
+2
++--+--+--+--+
+      |     |
++  +--+  +  +
+|  |     |  |
++  +  +--+  +
+|     |     |
++--+--+  +--+
+|           *
++--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ cat in5
+2
++--+--+--+--+--+
+      |        |
++--+  +  +--+  +
+|     |  |     |
++  +--+  +  +--+
+|  |     |  |  |
++  +  +--+  +  +
+|  |     |     |
++  +--+  +--+  +
+|        |     *
++--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ cat in6
+2
++--+--+--+--+--+--+
+         |        |
++  +--+--+  +--+  +
+|     |     |     |
++  +  +  +--+  +--+
+|  |  |  |  |  |  |
++  +--+  +  +  +  +
+|        |  |     |
++  +--+--+  +  +  +
+|  |  |     |  |  |
++  +  +  +--+  +  +
+|     |        |  *
++--+--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ cat in7
+2
++--+--+--+--+--+--+--+
+   |     |  |     |  |
++  +  +  +  +  +  +  +
+|     |     |  |  |  |
++--+--+  +--+  +  +  +
+|     |        |     |
++  +  +--+--+--+  +--+
+|  |        |        |
++  +--+--+  +--+  +--+
+|  |     |     |     |
++  +  +  +--+  +--+  +
+|  |  |  |  |        |
++  +--+  +  +--+--+--+
+|                    *
++--+--+--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ g++ b.cc
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ls
+a.out  b.cc  in1  in2  in3  in4  in5  in6  in7
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ cat in3
+2
++--+--+--+
+      |  |
++  +  +  +
+|  |     |
++  +--+--+
+|        *
++--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./
+a.out  b.cc   in1    in2    in3    in4    in5    in6    in7
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+0
++--+--+--+
+      |  |
++  +  +  +
+|  |     |
++  +--+--+
+|        *
++--+--+--+
+
+33
+15
+0--+--+--+
+00    |  |
++0 +  +  +
+|0 |     |
++0 +--+--+
+|000000000
++--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+1
++--+--+--+
+      |  |
++  +  +  +
+|  |     |
++  +--+--+
+|        *
++--+--+--+
+
+15
+15
+0--+--+--+
+00    |  |
++0 +  +  +
+|0 |     |
++0 +--+--+
+|000000000
++--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+2
++--+--+--+
+      |  |
++  +  +  +
+|  |     |
++  +--+--+
+|        *
++--+--+--+
+
+392
+15
+0--+--+--+
+00    |  |
++0 +  +  +
+|0 |     |
++0 +--+--+
+|000000000
++--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ cat in4
+2
++--+--+--+--+
+      |     |
++  +--+  +  +
+|  |     |  |
++  +  +--+  +
+|     |     |
++--+--+  +--+
+|           *
++--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+0
++--+--+--+--+
+      |     |
++  +--+  +  +
+|  |     |  |
++  +  +--+  +
+|     |     |
++--+--+  +--+
+|           *
++--+--+--+--+
+
+53
+32
+0--+--+--+--+
+00    |0000 |
++0 +--+0 +0 +
+|0 |0000 |0 |
++0 +0 +--+0 +
+|0000 | 000 |
++--+--+ 0+--+
+|       00000
++--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+1
++--+--+--+--+
+      |     |
++  +--+  +  +
+|  |     |  |
++  +  +--+  +
+|     |     |
++--+--+  +--+
+|           *
++--+--+--+--+
+
+33
+32
+0--+--+--+--+
+00    |0000 |
++0 +--+0 +0 +
+|0 |0000 |0 |
++0 +0 +--+0 +
+|0000 | 000 |
++--+--+ 0+--+
+|       00000
++--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+2
++--+--+--+--+
+      |     |
++  +--+  +  +
+|  |     |  |
++  +  +--+  +
+|     |     |
++--+--+  +--+
+|           *
++--+--+--+--+
+
+1500
+32
+0--+--+--+--+
+00    |0000 |
++0 +--+0 +0 +
+|0 |0000 |0 |
++0 +0 +--+0 +
+|0000 | 000 |
++--+--+ 0+--+
+|       00000
++--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ cat in5
+2
++--+--+--+--+--+
+      |        |
++--+  +  +--+  +
+|     |  |     |
++  +--+  +  +--+
+|  |     |  |  |
++  +  +--+  +  +
+|  |     |     |
++  +--+  +--+  +
+|        |     *
++--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+0
++--+--+--+--+--+
+      |        |
++--+  +  +--+  +
+|     |  |     |
++  +--+  +  +--+
+|  |     |  |  |
++  +  +--+  +  +
+|  |     |     |
++  +--+  +--+  +
+|        |     *
++--+--+--+--+--+
+
+88
+53
+0--+--+--+--+--+
+00000 |0000000 |
++--+0 +0 +--+0 +
+| 000 |0 | 000 |
++ 0+--+0 + 0+--+
+| 0| 000 | 0|  |
++ 0+ 0+--+ 0+  +
+| 0| 000 | 000 |
++ 0+--+0 +--+0 +
+| 000000 |   000
++--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+1
++--+--+--+--+--+
+      |        |
++--+  +  +--+  +
+|     |  |     |
++  +--+  +  +--+
+|  |     |  |  |
++  +  +--+  +  +
+|  |     |     |
++  +--+  +--+  +
+|        |     *
++--+--+--+--+--+
+
+56
+53
+0--+--+--+--+--+
+00000 |0000000 |
++--+0 +0 +--+0 +
+| 000 |0 | 000 |
++ 0+--+0 + 0+--+
+| 0| 000 | 0|  |
++ 0+ 0+--+ 0+  +
+| 0| 000 | 000 |
++ 0+--+0 +--+0 +
+| 000000 |   000
++--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+2
++--+--+--+--+--+
+      |        |
++--+  +  +--+  +
+|     |  |     |
++  +--+  +  +--+
+|  |     |  |  |
++  +  +--+  +  +
+|  |     |     |
++  +--+  +--+  +
+|        |     *
++--+--+--+--+--+
+
+3462
+53
+0--+--+--+--+--+
+00000 |0000000 |
++--+0 +0 +--+0 +
+| 000 |0 | 000 |
++ 0+--+0 + 0+--+
+| 0| 000 | 0|  |
++ 0+ 0+--+ 0+  +
+| 0| 000 | 000 |
++ 0+--+0 +--+0 +
+| 000000 |   000
++--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ cat in6
+2
++--+--+--+--+--+--+
+         |        |
++  +--+--+  +--+  +
+|     |     |     |
++  +  +  +--+  +--+
+|  |  |  |  |  |  |
++  +--+  +  +  +  +
+|        |  |     |
++  +--+--+  +  +  +
+|  |  |     |  |  |
++  +  +  +--+  +  +
+|     |        |  *
++--+--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+0
++--+--+--+--+--+--+
+         |        |
++  +--+--+  +--+  +
+|     |     |     |
++  +  +  +--+  +--+
+|  |  |  |  |  |  |
++  +--+  +  +  +  +
+|        |  |     |
++  +--+--+  +  +  +
+|  |  |     |  |  |
++  +  +  +--+  +  +
+|     |        |  *
++--+--+--+--+--+--+
+
+113
+46
+0--+--+--+--+--+--+
+00       |0000000 |
++0 +--+--+0 +--+0 +
+|0    |0000 | 000 |
++0 +  +0 +--+ 0+--+
+|0 |  |0 |  | 0|  |
++0 +--+0 +  + 0+  +
+|0000000 |  | 000 |
++  +--+--+  +  +0 +
+|  |  |     |  |0 |
++  +  +  +--+  +0 +
+|     |        |000
++--+--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+1
++--+--+--+--+--+--+
+         |        |
++  +--+--+  +--+  +
+|     |     |     |
++  +  +  +--+  +--+
+|  |  |  |  |  |  |
++  +--+  +  +  +  +
+|        |  |     |
++  +--+--+  +  +  +
+|  |  |     |  |  |
++  +  +  +--+  +  +
+|     |        |  *
++--+--+--+--+--+--+
+
+91
+46
+0--+--+--+--+--+--+
+00       |0000000 |
++0 +--+--+0 +--+0 +
+|0    |0000 | 000 |
++0 +  +0 +--+ 0+--+
+|0 |  |0 |  | 0|  |
++0 +--+0 +  + 0+  +
+|0000000 |  | 000 |
++  +--+--+  +  +0 +
+|  |  |     |  |0 |
++  +  +  +--+  +0 +
+|     |        |000
++--+--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+2
++--+--+--+--+--+--+
+         |        |
++  +--+--+  +--+  +
+|     |     |     |
++  +  +  +--+  +--+
+|  |  |  |  |  |  |
++  +--+  +  +  +  +
+|        |  |     |
++  +--+--+  +  +  +
+|  |  |     |  |  |
++  +  +  +--+  +  +
+|     |        |  *
++--+--+--+--+--+--+
+
+10857
+46
+0--+--+--+--+--+--+
+00       |0000000 |
++0 +--+--+0 +--+0 +
+|0    |0000 | 000 |
++0 +  +0 +--+ 0+--+
+|0 |  |0 |  | 0|  |
++0 +--+0 +  + 0+  +
+|0000000 |  | 000 |
++  +--+--+  +  +0 +
+|  |  |     |  |0 |
++  +  +  +--+  +0 +
+|     |        |000
++--+--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ cat in7
+2
++--+--+--+--+--+--+--+
+   |     |  |     |  |
++  +  +  +  +  +  +  +
+|     |     |  |  |  |
++--+--+  +--+  +  +  +
+|     |        |     |
++  +  +--+--+--+  +--+
+|  |        |        |
++  +--+--+  +--+  +--+
+|  |     |     |     |
++  +  +  +--+  +--+  +
+|  |  |  |  |        |
++  +--+  +  +--+--+--+
+|                    *
++--+--+--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+0
++--+--+--+--+--+--+--+
+   |     |  |     |  |
++  +  +  +  +  +  +  +
+|     |     |  |  |  |
++--+--+  +--+  +  +  +
+|     |        |     |
++  +  +--+--+--+  +--+
+|  |        |        |
++  +--+--+  +--+  +--+
+|  |     |     |     |
++  +  +  +--+  +--+  +
+|  |  |  |  |        |
++  +--+  +  +--+--+--+
+|                    *
++--+--+--+--+--+--+--+
+
+174
+93
+0--+--+--+--+--+--+--+
+00 |0000 |  |0000 |  |
++0 +0 +0 +  +0 +0 +  +
+|0000 |0    |0 |0 |  |
++--+--+0 +--+0 +0 +  +
+| 0000|0000000 |0    |
++ 0+ 0+--+--+--+0 +--+
+| 0| 0000000|   0    |
++ 0+--+--+ 0+--+0 +--+
+| 0|     | 0000|0000 |
++ 0+  +  +--+ 0+--+0 +
+| 0|  |  |  | 000000 |
++ 0+--+  +  +--+--+--+
+| 00000000000000000000
++--+--+--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+1
++--+--+--+--+--+--+--+
+   |     |  |     |  |
++  +  +  +  +  +  +  +
+|     |     |  |  |  |
++--+--+  +--+  +  +  +
+|     |        |     |
++  +  +--+--+--+  +--+
+|  |        |        |
++  +--+--+  +--+  +--+
+|  |     |     |     |
++  +  +  +--+  +--+  +
+|  |  |  |  |        |
++  +--+  +  +--+--+--+
+|                    *
++--+--+--+--+--+--+--+
+
+113
+93
+0--+--+--+--+--+--+--+
+00 |0000 |  |0000 |  |
++0 +0 +0 +  +0 +0 +  +
+|0000 |0    |0 |0 |  |
++--+--+0 +--+0 +0 +  +
+| 0000|0000000 |0    |
++ 0+ 0+--+--+--+0 +--+
+| 0| 0000000|   0    |
++ 0+--+--+ 0+--+0 +--+
+| 0|     | 0000|0000 |
++ 0+  +  +--+ 0+--+0 +
+| 0|  |  |  | 000000 |
++ 0+--+  +  +--+--+--+
+| 00000000000000000000
++--+--+--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+2
++--+--+--+--+--+--+--+
+   |     |  |     |  |
++  +  +  +  +  +  +  +
+|     |     |  |  |  |
++--+--+  +--+  +  +  +
+|     |        |     |
++  +  +--+--+--+  +--+
+|  |        |        |
++  +--+--+  +--+  +--+
+|  |     |     |     |
++  +  +  +--+  +--+  +
+|  |  |  |  |        |
++  +--+  +  +--+--+--+
+|                    *
++--+--+--+--+--+--+--+
+
+17292
+93
+0--+--+--+--+--+--+--+
+00 |0000 |  |0000 |  |
++0 +0 +0 +  +0 +0 +  +
+|0000 |0    |0 |0 |  |
++--+--+0 +--+0 +0 +  +
+| 0000|0000000 |0    |
++ 0+ 0+--+--+--+0 +--+
+| 0| 0000000|   0    |
++ 0+--+--+ 0+--+0 +--+
+| 0|     | 0000|0000 |
++ 0+  +  +--+ 0+--+0 +
+| 0|  |  |  | 000000 |
++ 0+--+  +  +--+--+--+
+| 00000000000000000000
++--+--+--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ cat in8
+2
++--+--+--+--+--+--+--+--+
+   |           |     |  |
++  +  +--+--+  +--+  +  +
+|     |  |              |
++--+--+  +  +  +--+--+--+
+|     |  |  |     |     |
++  +  +  +  +--+--+  +  +
+|  |     |  |        |  |
++  +--+--+  +  +--+--+  +
+|  |        |     |     |
++  +  +--+--+--+  +  +--+
+|     |        |  |     |
++  +--+  +--+  +  +--+--+
+|     |  |     |        |
++  +  +  +  +--+--+--+  +
+|  |     |              *
++--+--+--+--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+0
++--+--+--+--+--+--+--+--+
+   |           |     |  |
++  +  +--+--+  +--+  +  +
+|     |  |              |
++--+--+  +  +  +--+--+--+
+|     |  |  |     |     |
++  +  +  +  +--+--+  +  +
+|  |     |  |        |  |
++  +--+--+  +  +--+--+  +
+|  |        |     |     |
++  +  +--+--+--+  +  +--+
+|     |        |  |     |
++  +--+  +--+  +  +--+--+
+|     |  |     |        |
++  +  +  +  +--+--+--+  +
+|  |     |              *
++--+--+--+--+--+--+--+--+
+
+172
+78
+0--+--+--+--+--+--+--+--+
+00 |0000000000 |     |  |
++0 +0 +--+--+0 +--+  +  +
+|0000 |  | 000          |
++--+--+  + 0+  +--+--+--+
+|     |  | 0|     |     |
++  +  +  + 0+--+--+  +  +
+|  |     | 0|        |  |
++  +--+--+ 0+  +--+--+  +
+|  | 0000000|     |     |
++  + 0+--+--+--+  +  +--+
+| 0000|0000000 |  |     |
++ 0+--+0 +--+0 +  +--+--+
+| 000 |0 | 000 |        |
++  +0 +0 + 0+--+--+--+  +
+|  |0000 | 00000000000000
++--+--+--+--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+1
++--+--+--+--+--+--+--+--+
+   |           |     |  |
++  +  +--+--+  +--+  +  +
+|     |  |              |
++--+--+  +  +  +--+--+--+
+|     |  |  |     |     |
++  +  +  +  +--+--+  +  +
+|  |     |  |        |  |
++  +--+--+  +  +--+--+  +
+|  |        |     |     |
++  +  +--+--+--+  +  +--+
+|     |        |  |     |
++  +--+  +--+  +  +--+--+
+|     |  |     |        |
++  +  +  +  +--+--+--+  +
+|  |     |              *
++--+--+--+--+--+--+--+--+
+
+167
+78
+0--+--+--+--+--+--+--+--+
+00 |0000000000 |     |  |
++0 +0 +--+--+0 +--+  +  +
+|0000 |  | 000          |
++--+--+  + 0+  +--+--+--+
+|     |  | 0|     |     |
++  +  +  + 0+--+--+  +  +
+|  |     | 0|        |  |
++  +--+--+ 0+  +--+--+  +
+|  | 0000000|     |     |
++  + 0+--+--+--+  +  +--+
+| 0000|0000000 |  |     |
++ 0+--+0 +--+0 +  +--+--+
+| 000 |0 | 000 |        |
++  +0 +0 + 0+--+--+--+  +
+|  |0000 | 00000000000000
++--+--+--+--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+2
++--+--+--+--+--+--+--+--+
+   |           |     |  |
++  +  +--+--+  +--+  +  +
+|     |  |              |
++--+--+  +  +  +--+--+--+
+|     |  |  |     |     |
++  +  +  +  +--+--+  +  +
+|  |     |  |        |  |
++  +--+--+  +  +--+--+  +
+|  |        |     |     |
++  +  +--+--+--+  +  +--+
+|     |        |  |     |
++  +--+  +--+  +  +--+--+
+|     |  |     |        |
++  +  +  +  +--+--+--+  +
+|  |     |              *
++--+--+--+--+--+--+--+--+
+
+15508
+78
+0--+--+--+--+--+--+--+--+
+00 |0000000000 |     |  |
++0 +0 +--+--+0 +--+  +  +
+|0000 |  | 000          |
++--+--+  + 0+  +--+--+--+
+|     |  | 0|     |     |
++  +  +  + 0+--+--+  +  +
+|  |     | 0|        |  |
++  +--+--+ 0+  +--+--+  +
+|  | 0000000|     |     |
++  + 0+--+--+--+  +  +--+
+| 0000|0000000 |  |     |
++ 0+--+0 +--+0 +  +--+--+
+| 000 |0 | 000 |        |
++  +0 +0 + 0+--+--+--+  +
+|  |0000 | 00000000000000
++--+--+--+--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ g++ b.cc
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ cat in3
+2
++--+--+--+
+      |  |
++  +  +  +
+|  |     |
++  +--+--+
+|        *
++--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+0
++--+--+--+
+      |  |
++  +  +  +
+|  |     |
++  +--+--+
+|        *
++--+--+--+
+
+33
+15
+0--+--+--+
+00    |  |
++0 +  +  +
+|0 |     |
++0 +--+--+
+|000000000
++--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+1
++--+--+--+
+      |  |
++  +  +  +
+|  |     |
++  +--+--+
+|        *
++--+--+--+
+
+15
+15
+0--+--+--+
+00    |  |
++0 +  +  +
+|0 |     |
++0 +--+--+
+|000000000
++--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+2
++--+--+--+
+      |  |
++  +  +  +
+|  |     |
++  +--+--+
+|        *
++--+--+--+
+
+392
+15
+0--+--+--+
+00    |  |
++0 +  +  +
+|0 |     |
++0 +--+--+
+|000000000
++--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ cat in4
+2
++--+--+--+--+
+      |     |
++  +--+  +  +
+|  |     |  |
++  +  +--+  +
+|     |     |
++--+--+  +--+
+|           *
++--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+0
++--+--+--+--+
+      |     |
++  +--+  +  +
+|  |     |  |
++  +  +--+  +
+|     |     |
++--+--+  +--+
+|           *
++--+--+--+--+
+
+54
+32
+0--+--+--+--+
+00    |0000 |
++0 +--+0 +0 +
+|0 |0000 |0 |
++0 +0 +--+0 +
+|0000 | 000 |
++--+--+ 0+--+
+|       00000
++--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+1
++--+--+--+--+
+      |     |
++  +--+  +  +
+|  |     |  |
++  +  +--+  +
+|     |     |
++--+--+  +--+
+|           *
++--+--+--+--+
+
+40
+34
+0--+--+--+--+
+00    |0000 |
++0 +--+0 +0 +
+|0 |0000 |0 |
++0 +0 +--+0 +
+|0000 |0000 |
++--+--+0 +--+
+|      000000
++--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+2
++--+--+--+--+
+      |     |
++  +--+  +  +
+|  |     |  |
++  +  +--+  +
+|     |     |
++--+--+  +--+
+|           *
++--+--+--+--+
+
+1507
+32
+0--+--+--+--+
+00    |0000 |
++0 +--+0 +0 +
+|0 |0000 |0 |
++0 +0 +--+0 +
+|0000 | 000 |
++--+--+ 0+--+
+|       00000
++--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ cat in5
+2
++--+--+--+--+--+
+      |        |
++--+  +  +--+  +
+|     |  |     |
++  +--+  +  +--+
+|  |     |  |  |
++  +  +--+  +  +
+|  |     |     |
++  +--+  +--+  +
+|        |     *
++--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+0
++--+--+--+--+--+
+      |        |
++--+  +  +--+  +
+|     |  |     |
++  +--+  +  +--+
+|  |     |  |  |
++  +  +--+  +  +
+|  |     |     |
++  +--+  +--+  +
+|        |     *
++--+--+--+--+--+
+
+89
+53
+0--+--+--+--+--+
+00000 |0000000 |
++--+0 +0 +--+0 +
+| 000 |0 | 000 |
++ 0+--+0 + 0+--+
+| 0| 000 | 0|  |
++ 0+ 0+--+ 0+  +
+| 0| 000 | 000 |
++ 0+--+0 +--+0 +
+| 000000 |   000
++--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+1
++--+--+--+--+--+
+      |        |
++--+  +  +--+  +
+|     |  |     |
++  +--+  +  +--+
+|  |     |  |  |
++  +  +--+  +  +
+|  |     |     |
++  +--+  +--+  +
+|        |     *
++--+--+--+--+--+
+
+65
+57
+0--+--+--+--+--+
+00000 |0000000 |
++--+0 +0 +--+0 +
+|0000 |0 |0000 |
++0 +--+0 +0 +--+
+|0 | 000 |0 |  |
++0 + 0+--+0 +  +
+|0 | 000 |0000 |
++0 +--+0 +--+0 +
+|0000000 |   000
++--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+2
++--+--+--+--+--+
+      |        |
++--+  +  +--+  +
+|     |  |     |
++  +--+  +  +--+
+|  |     |  |  |
++  +  +--+  +  +
+|  |     |     |
++  +--+  +--+  +
+|        |     *
++--+--+--+--+--+
+
+4405
+53
+0--+--+--+--+--+
+00000 |0000000 |
++--+0 +0 +--+0 +
+| 000 |0 | 000 |
++ 0+--+0 + 0+--+
+| 0| 000 | 0|  |
++ 0+ 0+--+ 0+  +
+| 0| 000 | 000 |
++ 0+--+0 +--+0 +
+| 000000 |   000
++--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ cat in6
+2
++--+--+--+--+--+--+
+         |        |
++  +--+--+  +--+  +
+|     |     |     |
++  +  +  +--+  +--+
+|  |  |  |  |  |  |
++  +--+  +  +  +  +
+|        |  |     |
++  +--+--+  +  +  +
+|  |  |     |  |  |
++  +  +  +--+  +  +
+|     |        |  *
++--+--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+0
++--+--+--+--+--+--+
+         |        |
++  +--+--+  +--+  +
+|     |     |     |
++  +  +  +--+  +--+
+|  |  |  |  |  |  |
++  +--+  +  +  +  +
+|        |  |     |
++  +--+--+  +  +  +
+|  |  |     |  |  |
++  +  +  +--+  +  +
+|     |        |  *
++--+--+--+--+--+--+
+
+113
+46
+0--+--+--+--+--+--+
+00       |0000000 |
++0 +--+--+0 +--+0 +
+|0    |0000 | 000 |
++0 +  +0 +--+ 0+--+
+|0 |  |0 |  | 0|  |
++0 +--+0 +  + 0+  +
+|0000000 |  | 000 |
++  +--+--+  +  +0 +
+|  |  |     |  |0 |
++  +  +  +--+  +0 +
+|     |        |000
++--+--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+1
++--+--+--+--+--+--+
+         |        |
++  +--+--+  +--+  +
+|     |     |     |
++  +  +  +--+  +--+
+|  |  |  |  |  |  |
++  +--+  +  +  +  +
+|        |  |     |
++  +--+--+  +  +  +
+|  |  |     |  |  |
++  +  +  +--+  +  +
+|     |        |  *
++--+--+--+--+--+--+
+
+96
+48
+0--+--+--+--+--+--+
+00       |0000000 |
++0 +--+--+0 +--+0 +
+|0    |0000 |0000 |
++0 +  +0 +--+0 +--+
+|0 |  |0 |  |0 |  |
++0 +--+0 +  +0 +  +
+|0000000 |  |0000 |
++  +--+--+  +  +0 +
+|  |  |     |  |0 |
++  +  +  +--+  +0 +
+|     |        |000
++--+--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+2
++--+--+--+--+--+--+
+         |        |
++  +--+--+  +--+  +
+|     |     |     |
++  +  +  +--+  +--+
+|  |  |  |  |  |  |
++  +--+  +  +  +  +
+|        |  |     |
++  +--+--+  +  +  +
+|  |  |     |  |  |
++  +  +  +--+  +  +
+|     |        |  *
++--+--+--+--+--+--+
+
+10865
+46
+0--+--+--+--+--+--+
+00       |0000000 |
++0 +--+--+0 +--+0 +
+|0    |0000 | 000 |
++0 +  +0 +--+ 0+--+
+|0 |  |0 |  | 0|  |
++0 +--+0 +  + 0+  +
+|0000000 |  | 000 |
++  +--+--+  +  +0 +
+|  |  |     |  |0 |
++  +  +  +--+  +0 +
+|     |        |000
++--+--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ cat in7
+2
++--+--+--+--+--+--+--+
+   |     |  |     |  |
++  +  +  +  +  +  +  +
+|     |     |  |  |  |
++--+--+  +--+  +  +  +
+|     |        |     |
++  +  +--+--+--+  +--+
+|  |        |        |
++  +--+--+  +--+  +--+
+|  |     |     |     |
++  +  +  +--+  +--+  +
+|  |  |  |  |        |
++  +--+  +  +--+--+--+
+|                    *
++--+--+--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+0
++--+--+--+--+--+--+--+
+   |     |  |     |  |
++  +  +  +  +  +  +  +
+|     |     |  |  |  |
++--+--+  +--+  +  +  +
+|     |        |     |
++  +  +--+--+--+  +--+
+|  |        |        |
++  +--+--+  +--+  +--+
+|  |     |     |     |
++  +  +  +--+  +--+  +
+|  |  |  |  |        |
++  +--+  +  +--+--+--+
+|                    *
++--+--+--+--+--+--+--+
+
+174
+93
+0--+--+--+--+--+--+--+
+00 |0000 |  |0000 |  |
++0 +0 +0 +  +0 +0 +  +
+|0000 |0    |0 |0 |  |
++--+--+0 +--+0 +0 +  +
+| 0000|0000000 |0    |
++ 0+ 0+--+--+--+0 +--+
+| 0| 0000000|   0    |
++ 0+--+--+ 0+--+0 +--+
+| 0|     | 0000|0000 |
++ 0+  +  +--+ 0+--+0 +
+| 0|  |  |  | 000000 |
++ 0+--+  +  +--+--+--+
+| 00000000000000000000
++--+--+--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+1
++--+--+--+--+--+--+--+
+   |     |  |     |  |
++  +  +  +  +  +  +  +
+|     |     |  |  |  |
++--+--+  +--+  +  +  +
+|     |        |     |
++  +  +--+--+--+  +--+
+|  |        |        |
++  +--+--+  +--+  +--+
+|  |     |     |     |
++  +  +  +--+  +--+  +
+|  |  |  |  |        |
++  +--+  +  +--+--+--+
+|                    *
++--+--+--+--+--+--+--+
+
+117
+95
+0--+--+--+--+--+--+--+
+00 |0000 |  |0000 |  |
++0 +0 +0 +  +0 +0 +  +
+|0000 |0    |0 |0 |  |
++--+--+0 +--+0 +0 +  +
+|00000|0000000 |0    |
++0 + 0+--+--+--+0 +--+
+|0 | 0000000|   0    |
++0 +--+--+ 0+--+0 +--+
+|0 |     | 0000|0000 |
++0 +  +  +--+ 0+--+0 +
+|0 |  |  |  | 000000 |
++0 +--+  +  +--+--+--+
+|000000000000000000000
++--+--+--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+2
++--+--+--+--+--+--+--+
+   |     |  |     |  |
++  +  +  +  +  +  +  +
+|     |     |  |  |  |
++--+--+  +--+  +  +  +
+|     |        |     |
++  +  +--+--+--+  +--+
+|  |        |        |
++  +--+--+  +--+  +--+
+|  |     |     |     |
++  +  +  +--+  +--+  +
+|  |  |  |  |        |
++  +--+  +  +--+--+--+
+|                    *
++--+--+--+--+--+--+--+
+
+17519
+93
+0--+--+--+--+--+--+--+
+00 |0000 |  |0000 |  |
++0 +0 +0 +  +0 +0 +  +
+|0000 |0    |0 |0 |  |
++--+--+0 +--+0 +0 +  +
+| 0000|0000000 |0    |
++ 0+ 0+--+--+--+0 +--+
+| 0| 0000000|   0    |
++ 0+--+--+ 0+--+0 +--+
+| 0|     | 0000|0000 |
++ 0+  +  +--+ 0+--+0 +
+| 0|  |  |  | 000000 |
++ 0+--+  +  +--+--+--+
+| 00000000000000000000
++--+--+--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ cat in8
+2
++--+--+--+--+--+--+--+--+
+   |           |     |  |
++  +  +--+--+  +--+  +  +
+|     |  |              |
++--+--+  +  +  +--+--+--+
+|     |  |  |     |     |
++  +  +  +  +--+--+  +  +
+|  |     |  |        |  |
++  +--+--+  +  +--+--+  +
+|  |        |     |     |
++  +  +--+--+--+  +  +--+
+|     |        |  |     |
++  +--+  +--+  +  +--+--+
+|     |  |     |        |
++  +  +  +  +--+--+--+  +
+|  |     |              *
++--+--+--+--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+0
++--+--+--+--+--+--+--+--+
+   |           |     |  |
++  +  +--+--+  +--+  +  +
+|     |  |              |
++--+--+  +  +  +--+--+--+
+|     |  |  |     |     |
++  +  +  +  +--+--+  +  +
+|  |     |  |        |  |
++  +--+--+  +  +--+--+  +
+|  |        |     |     |
++  +  +--+--+--+  +  +--+
+|     |        |  |     |
++  +--+  +--+  +  +--+--+
+|     |  |     |        |
++  +  +  +  +--+--+--+  +
+|  |     |              *
++--+--+--+--+--+--+--+--+
+
+172
+78
+0--+--+--+--+--+--+--+--+
+00 |0000000000 |     |  |
++0 +0 +--+--+0 +--+  +  +
+|0000 |  |0000          |
++--+--+  +0 +  +--+--+--+
+|     |  |0 |     |     |
++  +  +  +0 +--+--+  +  +
+|  |     |0 |        |  |
++  +--+--+0 +  +--+--+  +
+|  |0000000 |     |     |
++  +0 +--+--+--+  +  +--+
+| 000 |0000000 |  |     |
++ 0+--+0 +--+0 +  +--+--+
+| 000 |0 | 000 |        |
++  +0 +0 + 0+--+--+--+  +
+|  |0000 | 00000000000000
++--+--+--+--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+1
++--+--+--+--+--+--+--+--+
+   |           |     |  |
++  +  +--+--+  +--+  +  +
+|     |  |              |
++--+--+  +  +  +--+--+--+
+|     |  |  |     |     |
++  +  +  +  +--+--+  +  +
+|  |     |  |        |  |
++  +--+--+  +  +--+--+  +
+|  |        |     |     |
++  +  +--+--+--+  +  +--+
+|     |        |  |     |
++  +--+  +--+  +  +--+--+
+|     |  |     |        |
++  +  +  +  +--+--+--+  +
+|  |     |              *
++--+--+--+--+--+--+--+--+
+
+172
+82
+0--+--+--+--+--+--+--+--+
+00 |0000000000 |     |  |
++0 +0 +--+--+0 +--+  +  +
+|0000 |  |0000          |
++--+--+  +0 +  +--+--+--+
+|     |  |0 |     |     |
++  +  +  +0 +--+--+  +  +
+|  |     |0 |        |  |
++  +--+--+0 +  +--+--+  +
+|  |0000000 |     |     |
++  +0 +--+--+--+  +  +--+
+|0000 |0000000 |  |     |
++0 +--+0 +--+0 +  +--+--+
+|0000 |0 |0000 |        |
++  +0 +0 +0 +--+--+--+  +
+|  |0000 |000000000000000
++--+--+--+--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+2
+^C
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ +--+--+--+--+--+--+--+--+
++--+--+--+--+--+--+--+--+: command not found
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$    |           |     |  |
+-bash: syntax error near unexpected token `|'
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ +  +  +--+--+  +--+  +  +
++: command not found
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ |     |  |              |
+-bash: syntax error near unexpected token `|'
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ +--+--+  +  +  +--+--+--+
++--+--+: command not found
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ |     |  |  |     |     |
+-bash: syntax error near unexpected token `|'
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ +  +  +  +  +--+--+  +  +
++: command not found
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ |  |     |  |        |  |
+-bash: syntax error near unexpected token `|'
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ +  +--+--+  +  +--+--+  +
++: command not found
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ |  |        |     |     |
+-bash: syntax error near unexpected token `|'
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ +  +  +--+--+--+  +  +--+
++: command not found
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ |     |        |  |     |
+-bash: syntax error near unexpected token `|'
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ +  +--+  +--+  +  +--+--+
++: command not found
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ |     |  |     |        |
+-bash: syntax error near unexpected token `|'
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ +  +  +  +  +--+--+--+  +
++: command not found
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ |  |     |              *
+-bash: syntax error near unexpected token `|'
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ +--+--+--+--+--+--+--+--+
++--+--+--+--+--+--+--+--+: command not found
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ^C
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ^C
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$ ./a.out
+2
++--+--+--+--+--+--+--+--+
+   |           |     |  |
++  +  +--+--+  +--+  +  +
+|     |  |              |
++--+--+  +  +  +--+--+--+
+|     |  |  |     |     |
++  +  +  +  +--+--+  +  +
+|  |     |  |        |  |
++  +--+--+  +  +--+--+  +
+|  |        |     |     |
++  +  +--+--+--+  +  +--+
+|     |        |  |     |
++  +--+  +--+  +  +--+--+
+|     |  |     |        |
++  +  +  +  +--+--+--+  +
+|  |     |              *
++--+--+--+--+--+--+--+--+
+
+18686
+78
+0--+--+--+--+--+--+--+--+
+00 |0000000000 |     |  |
++0 +0 +--+--+0 +--+  +  +
+|0000 |  |0000          |
++--+--+  +0 +  +--+--+--+
+|     |  |0 |     |     |
++  +  +  +0 +--+--+  +  +
+|  |     |0 |        |  |
++  +--+--+0 +  +--+--+  +
+|  |0000000 |     |     |
++  +0 +--+--+--+  +  +--+
+| 000 |0000000 |  |     |
++ 0+--+0 +--+0 +  +--+--+
+| 000 |0 | 000 |        |
++  +0 +0 + 0+--+--+--+  +
+|  |0000 | 00000000000000
++--+--+--+--+--+--+--+--+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/AI-assignments/lab1$

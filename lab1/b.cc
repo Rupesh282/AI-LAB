@@ -14,20 +14,7 @@ vector<vector<int>> v(N, vector<int>(N, 0));
 vector<vector<pair<int, int>>> par(N, vector<pair<int, int>>(N, {-1, -1}));
 int t;
 
-// const int dx[] = {0, 1, -1, 0}, dy[] = {1, 0, 0, -1}; //right first
-//const int dx[] = {1, 0, -1, 0}, dy[] = {0, 1, 0, -1}; //down first
-//const int dx[] = {0, 0, 1, -1}, dy[] = {1, -1, 0, 0}; //down first
-// DOWN > UP > RIGHT > LEFT
-//int rot_x[] = {0, 0, 1, -1};
-//int rot_y[] = {1, -1, 0, 0};
-
-
-
-//TODO:
-//  clean code
-//  do dfid 
-
-const int dx[] = {1, -1, 0, 0}, dy[] = {0, 0, 1, -1};
+const int dx[] = {-1, 0, 1, 0}, dy[] = {0, -1, 0, 1};
 
 bool validState(int i, int j) {
 	return i>=0 && i<n && j>=0 && j<m && v[i][j] == 0 && a[i][j] != '|' && a[i][j] != '+' && a[i][j] != '-';
@@ -159,13 +146,6 @@ int main() {
     n = (int)a.size();
     m = (int)a[0].size();
 
-
-    //cerr << T << " " << n << " " << m << "\n";
-    //for(string& i: a)
-        //cerr << i << "\n";
-
-    //return 0;
-
     if(T == 0) {
         bfs();
     } else if(T == 1) {
@@ -175,6 +155,4 @@ int main() {
     }
 	return 0;
 }
-
-
 
