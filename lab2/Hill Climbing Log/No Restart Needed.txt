@@ -1,0 +1,655 @@
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/Lab2$ ./a.out
+Randomly selected Initial State is :
+[ 2 3 5 ]
+[ 1 ]
+[ 6 4 ]
+
+Randomly selected Goal State is :
+[ 3 4 1 ]
+[ 5 6 ]
+[ 2 ]
+
+Hill Climbing
+
+[ 2 3 5 ]
+[ ]
+[ 6 4 1 ]
+Moves : 1
+
+[ 2 3 ]
+[ 5 ]
+[ 6 4 1 ]
+Moves : 2
+
+[ 2 3 1 ]
+[ 5 ]
+[ 6 4 ]
+Moves : 3
+
+[ 2 3 1 4 ]
+[ 5 ]
+[ 6 ]
+Moves : 4
+
+[ 2 3 1 4 ]
+[ 5 6 ]
+[ ]
+Moves : 5
+
+[ 2 3 1 ]
+[ 5 6 ]
+[ 4 ]
+Moves : 6
+
+Stuck in Local Maxima , Attempting 3 Random Moves
+
+[ 2 ]
+[ 5 6 4 1 3 ]
+[ ]
+Moves : 10
+
+[ ]
+[ 5 6 4 1 3 ]
+[ 2 ]
+Moves : 11
+
+[ 3 ]
+[ 5 6 4 1 ]
+[ 2 ]
+Moves : 12
+
+[ 3 ]
+[ 5 6 4 ]
+[ 2 1 ]
+Moves : 13
+
+[ 3 4 ]
+[ 5 6 ]
+[ 2 1 ]
+Moves : 14
+
+[ 3 4 1 ]
+[ 5 6 ]
+[ 2 ]
+Moves : 15
+
+Total 15 Moves
+
+Solved
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/Lab2$
+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/Lab2$ ./a.out
+Randomly selected Initial State is :
+[ 4 6 3 ]
+[ 1 5 2 ]
+[ ]
+
+Randomly selected Goal State is :
+[ 1 ]
+[ ]
+[ 3 4 2 5 6 ]
+
+Hill Climbing
+
+[ 4 6 ]
+[ 1 5 2 ]
+[ 3 ]
+Moves : 1
+
+[ 4 6 2 ]
+[ 1 5 ]
+[ 3 ]
+Moves : 2
+
+[ 4 6 2 5 ]
+[ 1 ]
+[ 3 ]
+Moves : 3
+
+[ 4 6 2 5 1 ]
+[ ]
+[ 3 ]
+Moves : 4
+
+Stuck in Local Maxima , Attempting 3 Random Moves
+
+[ 4 ]
+[ 1 5 2 6 ]
+[ 3 ]
+Moves : 8
+
+[ ]
+[ 1 5 2 6 ]
+[ 3 4 ]
+Moves : 9
+
+[ ]
+[ 1 5 2 ]
+[ 3 4 6 ]
+Moves : 10
+
+Stuck in Local Maxima , Attempting 3 Random Moves
+
+[ 6 ]
+[ 1 5 2 ]
+[ 3 4 ]
+Moves : 14
+
+[ 6 ]
+[ 1 5 ]
+[ 3 4 2 ]
+Moves : 15
+
+[ 6 ]
+[ 1 ]
+[ 3 4 2 5 ]
+Moves : 16
+
+[ ]
+[ 1 ]
+[ 3 4 2 5 6 ]
+Moves : 17
+
+[ 1 ]
+[ ]
+[ 3 4 2 5 6 ]
+Moves : 18
+
+Total 18 Moves
+
+Solved
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/Lab2$
+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/Lab2$ ./a.out
+Randomly selected Initial State is :
+[ 1 2 ]
+[ ]
+[ 6 5 4 3 ]
+
+Randomly selected Goal State is :
+[ 3 2 ]
+[ 4 6 5 ]
+[ 1 ]
+
+Hill Climbing
+
+[ 1 2 3 ]
+[ ]
+[ 6 5 4 ]
+Moves : 1
+
+[ 1 2 3 ]
+[ 4 ]
+[ 6 5 ]
+Moves : 2
+
+[ 1 2 3 5 ]
+[ 4 ]
+[ 6 ]
+Moves : 3
+
+[ 1 2 3 5 ]
+[ 4 6 ]
+[ ]
+Moves : 4
+
+[ 1 2 3 ]
+[ 4 6 5 ]
+[ ]
+Moves : 5
+
+[ 1 2 ]
+[ 4 6 5 ]
+[ 3 ]
+Moves : 6
+
+Stuck in Local Maxima , Attempting 3 Random Moves
+
+[ ]
+[ 4 6 5 3 2 1 ]
+[ ]
+Moves : 10
+
+[ ]
+[ 4 6 5 3 2 ]
+[ 1 ]
+Moves : 11
+
+[ ]
+[ 4 6 5 3 ]
+[ 1 2 ]
+Moves : 12
+
+[ 3 ]
+[ 4 6 5 ]
+[ 1 2 ]
+Moves : 13
+
+[ 3 2 ]
+[ 4 6 5 ]
+[ 1 ]
+Moves : 14
+
+Total 14 Moves
+
+Solved
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/Lab2$
+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/Lab2$ ./a.out
+Randomly selected Initial State is :
+[ 1 ]
+[ 4 5 ]
+[ 2 6 3 ]
+
+Randomly selected Goal State is :
+[ 1 2 5 4 6 ]
+[ ]
+[ 3 ]
+
+Hill Climbing
+
+[ 1 ]
+[ 4 5 3 ]
+[ 2 6 ]
+Moves : 1
+
+[ 1 ]
+[ 4 5 3 6 ]
+[ 2 ]
+Moves : 2
+
+[ 1 2 ]
+[ 4 5 3 6 ]
+[ ]
+Moves : 3
+
+[ 1 2 6 ]
+[ 4 5 3 ]
+[ ]
+Moves : 4
+
+[ 1 2 6 ]
+[ 4 5 ]
+[ 3 ]
+Moves : 5
+
+[ 1 2 ]
+[ 4 5 6 ]
+[ 3 ]
+Moves : 6
+
+[ 1 2 ]
+[ 4 5 ]
+[ 3 6 ]
+Moves : 7
+
+[ 1 2 5 ]
+[ 4 ]
+[ 3 6 ]
+Moves : 8
+
+[ 1 2 5 4 ]
+[ ]
+[ 3 6 ]
+Moves : 9
+
+[ 1 2 5 4 6 ]
+[ ]
+[ 3 ]
+Moves : 10
+
+Total 10 Moves
+
+Solved
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/Lab2$
+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/Lab2$ ./a.out
+Randomly selected Initial State is :
+[ 3 4 ]
+[ 1 5 2 ]
+[ 6 ]
+
+Randomly selected Goal State is :
+[ 1 ]
+[ 5 ]
+[ 6 4 2 3 ]
+
+Hill Climbing
+
+[ 3 ]
+[ 1 5 2 ]
+[ 6 4 ]
+Moves : 1
+
+[ 3 ]
+[ 1 5 ]
+[ 6 4 2 ]
+Moves : 2
+
+[ ]
+[ 1 5 ]
+[ 6 4 2 3 ]
+Moves : 3
+
+[ 5 ]
+[ 1 ]
+[ 6 4 2 3 ]
+Moves : 4
+
+[ 5 ]
+[ ]
+[ 6 4 2 3 1 ]
+Moves : 5
+
+[ ]
+[ 5 ]
+[ 6 4 2 3 1 ]
+Moves : 6
+
+[ 1 ]
+[ 5 ]
+[ 6 4 2 3 ]
+Moves : 7
+
+Total 7 Moves
+
+Solved
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/Lab2$
+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/Lab2$ ./a.out
+Randomly selected Initial State is :
+[ 5 4 ]
+[ 6 3 2 1 ]
+[ ]
+
+Randomly selected Goal State is :
+[ 4 2 1 ]
+[ 6 ]
+[ 3 5 ]
+
+Hill Climbing
+
+[ 5 4 1 ]
+[ 6 3 2 ]
+[ ]
+Moves : 1
+
+[ 5 4 1 2 ]
+[ 6 3 ]
+[ ]
+Moves : 2
+
+[ 5 4 1 2 ]
+[ 6 ]
+[ 3 ]
+Moves : 3
+
+[ 5 4 1 ]
+[ 6 ]
+[ 3 2 ]
+Moves : 4
+
+Search is stuck in Local Maxima , Attempting 3 Random Moves
+
+[ 5 ]
+[ 6 2 1 4 ]
+[ 3 ]
+Moves : 8
+
+[ ]
+[ 6 2 1 4 ]
+[ 3 5 ]
+Moves : 9
+
+[ 4 ]
+[ 6 2 1 ]
+[ 3 5 ]
+Moves : 10
+
+[ 4 ]
+[ 6 2 ]
+[ 3 5 1 ]
+Moves : 11
+
+[ 4 2 ]
+[ 6 ]
+[ 3 5 1 ]
+Moves : 12
+
+[ 4 2 1 ]
+[ 6 ]
+[ 3 5 ]
+Moves : 13
+
+Total 13 Moves
+
+Solved
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/Lab2$
+
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/Lab2$ ./a.out
+Randomly selected Initial State is :
+[ 4 6 1 ]
+[ 5 2 ]
+[ 3 ]
+
+Randomly selected Goal State is :
+[ 1 3 ]
+[ 2 4 ]
+[ 5 6 ]
+
+Hill Climbing
+
+[ 4 6 1 ]
+[ 5 2 3 ]
+[ ]
+Moves : 1
+
+[ 4 6 1 3 ]
+[ 5 2 ]
+[ ]
+Moves : 2
+
+[ 4 6 1 3 2 ]
+[ 5 ]
+[ ]
+Moves : 3
+
+[ 4 6 1 3 2 ]
+[ ]
+[ 5 ]
+Moves : 4
+
+[ 4 6 1 3 ]
+[ 2 ]
+[ 5 ]
+Moves : 5
+
+[ 4 6 1 ]
+[ 2 ]
+[ 5 3 ]
+Moves : 6
+
+Search is stuck in Local Maxima , Attempting 3 Random Moves
+
+[ 4 ]
+[ 2 3 1 6 ]
+[ 5 ]
+Moves : 10
+
+[ 4 ]
+[ 2 3 1 ]
+[ 5 6 ]
+Moves : 11
+
+[ ]
+[ 2 3 1 4 ]
+[ 5 6 ]
+Moves : 12
+
+[ ]
+[ 2 3 1 ]
+[ 5 6 4 ]
+Moves : 13
+
+[ 1 ]
+[ 2 3 ]
+[ 5 6 4 ]
+Moves : 14
+
+[ 1 3 ]
+[ 2 ]
+[ 5 6 4 ]
+Moves : 15
+
+[ 1 3 ]
+[ 2 4 ]
+[ 5 6 ]
+Moves : 16
+
+Total 16 Moves
+
+Solved
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/Lab2$
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/Lab2$ ./a.out
+Randomly selected Initial State is :
+[ 6 4 5 ]
+[ ]
+[ 3 2 1 ]
+
+Randomly selected Goal State is :
+[ 3 6 4 2 ]
+[ 5 1 ]
+[ ]
+
+Hill Climbing
+
+[ 6 4 ]
+[ 5 ]
+[ 3 2 1 ]
+Moves : 1
+
+[ 6 4 ]
+[ 5 1 ]
+[ 3 2 ]
+Moves : 2
+
+[ 6 4 2 ]
+[ 5 1 ]
+[ 3 ]
+Moves : 3
+
+[ 6 4 2 3 ]
+[ 5 1 ]
+[ ]
+Moves : 4
+
+Search is stuck in Local Maxima , Attempting 3 Random Moves
+
+[ ]
+[ 5 1 2 4 6 ]
+[ 3 ]
+Moves : 8
+
+[ 3 ]
+[ 5 1 2 4 6 ]
+[ ]
+Moves : 9
+
+[ 3 6 ]
+[ 5 1 2 4 ]
+[ ]
+Moves : 10
+
+[ 3 6 4 ]
+[ 5 1 2 ]
+[ ]
+Moves : 11
+
+[ 3 6 4 2 ]
+[ 5 1 ]
+[ ]
+Moves : 12
+
+Total 12 Moves
+
+Solved
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/Lab2$
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/Lab2$ ./a.out
+Randomly selected Initial State is :
+[ 4 2 ]
+[ 3 1 5 ]
+[ 6 ]
+
+Randomly selected Goal State is :
+[ 6 4 ]
+[ 1 2 ]
+[ 5 3 ]
+
+Hill Climbing
+
+[ 4 2 ]
+[ 3 1 5 6 ]
+[ ]
+Moves : 1
+
+[ 4 2 6 ]
+[ 3 1 5 ]
+[ ]
+Moves : 2
+
+[ 4 2 6 ]
+[ 3 1 ]
+[ 5 ]
+Moves : 3
+
+[ 4 2 6 1 ]
+[ 3 ]
+[ 5 ]
+Moves : 4
+
+[ 4 2 6 1 ]
+[ ]
+[ 5 3 ]
+Moves : 5
+
+[ 4 2 6 ]
+[ 1 ]
+[ 5 3 ]
+Moves : 6
+
+[ 4 2 ]
+[ 1 ]
+[ 5 3 6 ]
+Moves : 7
+
+[ 4 ]
+[ 1 2 ]
+[ 5 3 6 ]
+Moves : 8
+
+[ 4 6 ]
+[ 1 2 ]
+[ 5 3 ]
+Moves : 9
+
+Search is stuck in Local Maxima , Attempting 3 Random Moves
+
+[ ]
+[ 1 2 4 ]
+[ 5 3 6 ]
+Moves : 13
+
+[ 6 ]
+[ 1 2 4 ]
+[ 5 3 ]
+Moves : 14
+
+[ 6 4 ]
+[ 1 2 ]
+[ 5 3 ]
+Moves : 15
+
+Total 15 Moves
+
+Solved
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE LAB VI Semester/AI Lab/Lab2$

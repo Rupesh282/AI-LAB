@@ -1,0 +1,6 @@
+Heuristic Dunction ideas 
+
+1. Number of Blocks in correct position wrt Goal / Ratio
+2. Number of Blocks in correct position for ( Column 1 * Column 2 )
+3. Number of Blocks in correct height * Number of correct position 
+4. Scoring System where scores are allocated based on relative position wrt Goal State
