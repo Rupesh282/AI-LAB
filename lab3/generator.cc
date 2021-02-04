@@ -9,6 +9,9 @@ int main(int argc, char** argv) {
     assert(no_of_literals <= 26 && no_of_clauses > 0);
 
 
+    std::cout << no_of_literals << " " << no_of_clauses << "\n";
+
+
     std::vector<char> LIT;
     for(int i=0;i<no_of_literals;++i)
         LIT.push_back((char)(i+'a'));
