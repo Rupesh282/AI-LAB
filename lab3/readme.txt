@@ -8,8 +8,8 @@ There are three files for each algorithm, namely
 
 for generating CNF : clause_generator.cc
 
-run run.sh file using commandline (it will compile all *.cc files)
-command : $ ./run.sh
+run Makefile using commandline (it will compile all *.cc files)
+command : $ make build
 
 # How to generate CNF ? 
 for generating a CNF with 'L' literals and 'C' clauses, 
@@ -20,7 +20,10 @@ command : $ ./clause_generator L C > CNF.txt
 in our case, L = 4 and C = 5 so, 
 command : $ ./clause_generator 4 5 > CNF.txt
 
-you can see generated clauses in readable_CNF.txt (one clause on each line)
+you can see generated clauses in readable_CNF.txt (one clause on each line) by executing
+command : $ make view
+
+
 
 # to run tabuSearch
 command : $./tabuSearch < CNF.txt
