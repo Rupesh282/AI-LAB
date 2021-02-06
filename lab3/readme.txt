@@ -13,7 +13,7 @@ command : $ ./run.sh
 
 # How to generate CNF ? 
 for generating a CNF with 'L' literals and 'C' clauses, 
-run following command in commadline:
+run following command in commandline in this format:
 
 command : $ ./clause_generator L C > CNF.txt
 
