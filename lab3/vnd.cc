@@ -12,8 +12,7 @@ vector<int> V {0,0,0,0} ;
 int number_of_moves = 1;
 int current_neighbourhood = 0;
 
-
-// To print the current status of the table ( showing all the blocks )
+// To print the values of variables a,b,c,d
 void PrintV()
 {   
     for(int i=0 ; i<V.size() ; ++i)
@@ -21,6 +20,7 @@ void PrintV()
     cout << "\n" ;
 }
 
+// To print the values of a particular assignment of variables
 void PrintV(vector<int> A)
 {   
     for(int i=0 ; i<A.size() ; ++i)
@@ -28,6 +28,7 @@ void PrintV(vector<int> A)
     cout << "\n" ;
 }
 
+//To return the values of variables according to the clause
 int Value(char c , vector<int> T )
 {
     switch(c)
@@ -46,6 +47,7 @@ int Value(char c , vector<int> T )
     return -1 ;
 }
 
+// Heuristic to evaluate how good this assignment of variables is
 int Evaluate(vector<int> T)
 {
     int Score = 0 ;
@@ -66,7 +68,8 @@ int Evaluate(vector<int> T)
 
     return Score ;
 }
- 
+
+// To go to a different neighbourhood if local minima is encountered
 void ChangeNeighbourhood()
 {
     ++current_neighbourhood;
@@ -82,6 +85,7 @@ void ChangeNeighbourhood()
     }
 }
 
+// Change the ith variable in current assignment
 vector<int> Change( int i )
 {
     vector<int> temp = V ;
@@ -89,6 +93,8 @@ vector<int> Change( int i )
     return temp ;
 }
 
+
+// Overloaded to change the ith variable in the passed assignent of variables
 vector<int> Change( vector<int> B , int i )
 {
     vector<int> temp = B ;
@@ -96,6 +102,7 @@ vector<int> Change( vector<int> B , int i )
     return temp ;
 }
 
+// Returns the best possible move by pertubing ONLY 1 variable
 void Best_of_0()
 {
     int scores[] = {0,0,0,0} ;
@@ -120,6 +127,8 @@ void Best_of_0()
 
 }
 
+
+// Returns the best possible move by pertubing ONLY 2 variables
 void Best_of_1()
 {
     int scores[] = {0,0,0,0,0,0} ;
@@ -156,6 +165,8 @@ void Best_of_1()
     } 
 }
 
+
+// Returns the best possible move by pertubing ONLY 3 variables
 void Best_of_2()
 {
     int scores[] = {0,0,0,0} ;
@@ -189,6 +200,7 @@ void Best_of_2()
 
 }
 
+// Returns the move by pertubing all 4 variables
 void Best_of_3()
 {   int max_score = Evaluate(Change(Change(Change(Change(0),1),2),3)) ;
 
@@ -223,6 +235,7 @@ bool GoalTest()
     {  return 0 ; }
 }
 
+// Implement Variable Neighbourhood Descent 
 void VND()
 {   vector<int> Last ;
     vector<int> SecondLast ;
@@ -244,7 +257,7 @@ void VND()
         cout<<"Current Iteration Values : "; PrintV() ;  
         cout<<"No. of Clauses satisfied : " << Evaluate(V) << endl  ;
     
-        if(V==Last || V==SecondLast)
+        if(V==Last || V==SecondLast)    // If Local minima is encountered then switch neighbourhoods
         {
            ChangeNeighbourhood();
         }
