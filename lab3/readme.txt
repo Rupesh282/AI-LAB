@@ -29,5 +29,5 @@ command : $./tabuSearch < CNF.txt
 command : $./beamSearch < CNF.txt
 
 # to run VND
-...
+command : $./vnd 
 
