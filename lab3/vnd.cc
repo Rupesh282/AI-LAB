@@ -6,7 +6,7 @@
 
 using namespace std ;
 
-vector<string> SAT {"ACD", "dac", "Bac" , "aDB" ,"AbD"};
+vector<string> SAT {"acd", "aBc", "aBc" , "acd" ,"aad"};
 vector<int> V {0,0,0,0} ;
 
 int number_of_moves = 0;
@@ -21,19 +21,26 @@ void PrintV()
     cout << "\n" ;
 }
 
-int Value(char c )
+void PrintV(vector<int> A)
+{   
+    for(int i=0 ; i<A.size() ; ++i)
+    {  cout<<A[i]<<"  ";  }
+    cout << "\n" ;
+}
+
+int Value(char c , vector<int> T )
 {
     switch(c)
     {
-        case 'a' : return V[0]; break ;
-        case 'b' : return V[1]; break ;
-        case 'c' : return V[2]; break ;
-        case 'd' : return V[3]; break ;
+        case 'a' : return T[0]; break ;
+        case 'b' : return T[1]; break ;
+        case 'c' : return T[2]; break ;
+        case 'd' : return T[3]; break ;
 
-        case 'A' : return ((V[0]==0)?1:0) ; break ;
-        case 'B' : return ((V[1]==0)?1:0) ; break ;
-        case 'C' : return ((V[2]==0)?1:0) ; break ;
-        case 'D' : return ((V[3]==0)?1:0) ; break ;
+        case 'A' : return ((T[0]==0)?1:0) ; break ;
+        case 'B' : return ((T[1]==0)?1:0) ; break ;
+        case 'C' : return ((T[2]==0)?1:0) ; break ;
+        case 'D' : return ((T[3]==0)?1:0) ; break ;
     }
 
     return -1 ;
@@ -42,16 +49,17 @@ int Value(char c )
 int Evaluate(vector<int> T)
 {
     int Score = 0 ;
-    for(int i=0 ; i<SAT.size() ; ++i)
+    for(int i=0 ; i<5 ; ++i)
     {
-        int temp = 1 ;
+        int temp = 1 ; int temp1 ;
         for(int j=0 ; j<3 ; ++j)
-        {
-            temp = temp*Value(SAT[i][j]) ;
+        {   temp1 = Value(SAT[i][j],T) ;
+            temp = temp*temp1 ;
         }
 
         if(temp==1)
-        { ++Score; }
+        { Score = Score+1 ; }
+
     }
 
     return Score ;
@@ -61,7 +69,7 @@ void ChangeNeighbourhood()
 {
     ++current_neighbourhood;
 
-    if(current_neighbourhood>2)
+    if(current_neighbourhood>3)
     {   cout << endl ;
         cout<<"This is the local optimal solution in all neighbourhoods" << endl ;
         cout<<"Current Values : "; PrintV() ;  
@@ -88,10 +96,12 @@ vector<int> Change( vector<int> B , int i )
 void Best_of_0()
 {
     int scores[] = {0,0,0,0} ;
-    for(int i=0 ; i<4 ; ++i)
-    {
-        scores[i] = Evaluate(Change(i)) ;
-    }
+
+    scores[0]=Evaluate(Change(0));
+    scores[1]=Evaluate(Change(1));
+    scores[2]=Evaluate(Change(2));
+    scores[3]=Evaluate(Change(3));
+
     int max_score = scores[0] ; int max_index = 0 ;
     for(int i=0 ; i<4 ; ++i)
     {
@@ -102,10 +112,9 @@ void Best_of_0()
         }
     }
 
-    if(Evaluate(Change(max_index)) >= Evaluate(V))
-    { V = Change(max_index) ;
-      cout<<" "<<Evaluate(Change(max_index))<< " "<< Evaluate(V) << endl ;
-    }   
+    if(max_score >= Evaluate(V))
+    { V = Change(max_index) ; }   
+
 }
 
 void Best_of_1()
@@ -130,7 +139,7 @@ void Best_of_1()
         }
     }
 
-    if(max_score>= Evaluate(V))
+    if(max_score >= Evaluate(V))
     {
     switch(max_index)
     {
@@ -177,6 +186,13 @@ void Best_of_2()
 
 }
 
+void Best_of_3()
+{   int max_score = Evaluate(Change(Change(Change(Change(0),1),2),3)) ;
+
+    if(max_score>= Evaluate(V))
+    { V = Change(Change(Change(Change(0),1),2),3) ; }
+}
+
 
 // MoveGen to generate next possible states , and return the best one according to Heuristic
 void MoveGen(vector<int> A)
@@ -186,16 +202,22 @@ void MoveGen(vector<int> A)
         case 0: Best_of_0() ; break ;
         case 1: Best_of_1() ; break ;
         case 2: Best_of_2() ; break ;
-    /*    case 3: Best_of_3() ; break ;
-        case 4: Best_of_all() ; break ;  */
+        case 3: Best_of_3() ; break ;
     }
 }
 
 // Check if the current state is the goal State
 bool GoalTest()
 {
-    if(Evaluate(V)==5) return 1 ;
-    else return 0 ;
+    if(Evaluate(V)==5) 
+    {
+     cout << "\nSolution Found\n" ;  
+     cout<<"Current Values : "; PrintV() ;
+     cout<<"No. of states explored : " << number_of_moves << endl;
+     exit(0);
+    }
+    else
+    {  return 0 ; }
 }
 
 void VND()
@@ -206,10 +228,17 @@ void VND()
         SecondLast = Last ;
         Last = V ;
         MoveGen(V);
-        ++number_of_moves ;
+        switch(current_neighbourhood)
+        {
+            case 0: number_of_moves+=4 ; break ;
+            case 1: number_of_moves+=6 ; break ;
+            case 2: number_of_moves+=4 ; break ;
+            case 3: number_of_moves+=1 ; break ;
+
+        }
 
         cout<< endl ;
-        cout<<"Current Values : "; PrintV() ;  
+        cout<<"Current Iteration Values : "; PrintV() ;  
         cout<<"No. of Clauses satisfied : " << Evaluate(V) << endl  ;
     
         if(V==Last || V==SecondLast)
@@ -224,12 +253,11 @@ void VND()
 
 int main()
 {
-    cout << "Initializing Variables to ";
-    PrintV();
-
     // Insert values into SAT from file 
+    
+    VND();
+    
 
-   VND() ;
 
     return 0;
 }

@@ -4,7 +4,7 @@
 There are three files for each algorithm, namely
 1 ) tabuSearch.cc
 2 ) beamSearch.cc
-3 ) 
+3 ) vnd.cc
 
 for generating CNF : clause_generator.cc
 
