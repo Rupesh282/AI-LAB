@@ -6,10 +6,10 @@
 
 using namespace std ;
 
-vector<string> SAT {"acd", "aBc", "aBc" , "acd" ,"aad"};
+vector<string> SAT ;
 vector<int> V {0,0,0,0} ;
 
-int number_of_moves = 0;
+int number_of_moves = 1;
 int current_neighbourhood = 0;
 
 
@@ -51,10 +51,12 @@ int Evaluate(vector<int> T)
     int Score = 0 ;
     for(int i=0 ; i<5 ; ++i)
     {
-        int temp = 1 ; int temp1 ;
+        int temp = 0 ;
         for(int j=0 ; j<3 ; ++j)
-        {   temp1 = Value(SAT[i][j],T) ;
-            temp = temp*temp1 ;
+        {   if( Value(SAT[i][j],T) == 1 )
+            {
+                temp=1 ;
+            }
         }
 
         if(temp==1)
@@ -252,12 +254,19 @@ void VND()
 
 
 int main()
-{
+{   int no_of_literals , no_of_clauses , TIME ;
     // Insert values into SAT from file 
+    std::cin >> no_of_literals >> no_of_clauses;
+
+    TIME = (1 << no_of_literals);
+
+    for(int i=0; i<no_of_clauses; ++i) {
+        std::string s;
+        std::cin >> s;
+        SAT.push_back(s);
+    }
     
     VND();
-    
-
 
     return 0;
 }

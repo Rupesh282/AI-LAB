@@ -1,0 +1,7 @@
+no of literals : 4
+no of clauses : 5
+~d v ~c v ~b
+c v d v ~b
+~d v ~c v b
+~a v ~b v c
+b v ~a v c
