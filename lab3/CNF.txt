@@ -1,6 +1,6 @@
 4 5
-DCB
-cdB
-DCb
-ABc
-bAc
+dbc
+AdC
+DbA
+bda
+CAb

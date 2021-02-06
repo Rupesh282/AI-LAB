@@ -70,6 +70,7 @@ int Evaluate(vector<int> T)
 void ChangeNeighbourhood()
 {
     ++current_neighbourhood;
+    cout <<"\nChanging Neighbourhood\n";
 
     if(current_neighbourhood>3)
     {   cout << endl ;
@@ -265,6 +266,8 @@ int main()
         std::cin >> s;
         SAT.push_back(s);
     }
+
+    std::cout << "Starting Hill Climbing with Variable Neighbourhood Descent ... \n";
     
     VND();
 

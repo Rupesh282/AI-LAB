@@ -1,0 +1,53 @@
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE-Lab/AI Lab/AI-assignments/lab3$ g++ generator.cc -o clause_generator
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE-Lab/AI Lab/AI-assignments/lab3$ ./clause_generator 4 5 > CNF.txt
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE-Lab/AI Lab/AI-assignments/lab3$ cat CNF.txt
+4 5
+dbc
+AdC
+DbA
+bda
+CAb
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE-Lab/AI Lab/AI-assignments/lab3$ cat readable_CNF.txt
+no of literals : 4
+no of clauses : 5
+d v b v c
+~a v d v ~c
+~d v b v ~a
+b v d v a
+~c v ~a v b
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE-Lab/AI Lab/AI-assignments/lab3$ g++ tabuSearch.cc -o tabu
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE-Lab/AI Lab/AI-assignments/lab3$ g++ beamSearch.cc -o beam
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE-Lab/AI Lab/AI-assignments/lab3$ g++ vnd.cc -o vnd
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE-Lab/AI Lab/AI-assignments/lab3$ ./tabu < CNF.txt
+Starting Tabu search ...
+Hvalue: 3
+literals: 0 0 0 0
+Hvalue: 5
+literals: 0 0 0 1
+
+Best solution found from tabu search:
+Hvalue: 5
+literals: 0 0 0 1
+Answer found !
+No. of steps : 2
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE-Lab/AI Lab/AI-assignments/lab3$ ./beam < CNF.txt
+Starting Beam search ...
+Hvalue: 3
+literals: 0 0 0 0
+Hvalue: 5
+literals: 0 0 0 1
+
+Goal State :
+Hvalue: 5
+literals: 0 0 0 1
+Answer found !
+No. of states explored : 2
+corvus@Corvus:/mnt/c/Users/Corvus/Documents/CSE-Lab/AI Lab/AI-assignments/lab3$ ./vnd < CNF.txt
+Starting Hill Climbing with Variable Neighbourhood Descent ...
+
+Current Iteration Values : 0  0  0  1
+No. of Clauses satisfied : 5
+
+Solution Found
+Current Values : 0  0  0  1
+No. of states explored : 5
