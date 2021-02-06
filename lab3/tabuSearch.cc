@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 
-#define TABU_TENURE 2
+#define TABU_TENURE 5
 
 int no_of_literals, no_of_clauses, TIME, no_of_steps = 0;
 std::vector<std::string> CNF;
