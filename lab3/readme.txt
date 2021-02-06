@@ -20,7 +20,7 @@ command : $ ./clause_generator L C > CNF.txt
 in our case, L = 4 and C = 5 so, 
 command : $ ./clause_generator 4 5 > CNF.txt
 
-you can see generated clauses in readable_CNF.txt (one CNF on each line)
+you can see generated clauses in readable_CNF.txt (one clause on each line)
 
 # to run tabuSearch
 command : $./tabuSearch < CNF.txt
