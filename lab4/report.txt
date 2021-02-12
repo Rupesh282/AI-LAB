@@ -1,1 +1,1 @@
-We will implement A* and might use C++ 
+We will implement A* and might use C++ as it is much faster than python .
