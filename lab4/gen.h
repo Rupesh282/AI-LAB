@@ -1,0 +1,206 @@
+#include <iostream>
+#include <vector>
+#include <random>
+#include <chrono>
+#include <algorithm>
+
+
+//over-all outline for genetic algo : 
+// 1 ) create chromosomes
+// 2 ) mutate + crossover
+// 3 ) select best N chromosomes
+// 4 ) repeat from 1 )
+// 5 ) keep track of best ans
+
+
+
+int N_cities;
+
+std::string E_type;
+std::vector<std::pair<double, double>> cities;
+std::vector<std::vector<double>> dist_matrix;
+
+std::mt19937 rng(std::chrono::steady_clock::now().time_since_epoch().count());
+std::uniform_int_distribution<int> distr(0, 99);
+
+
+class chromo {
+    public:
+        int n;
+        double value;
+        std::vector<int> order;
+        chromo() {
+            ;
+        }
+        
+        chromo(int N) {
+            n = N;
+            order.resize(n);
+            std::iota(order.begin(), order.end(), 0);
+            shuffle(order.begin(), order.end(), rng);
+            value = cost();
+        }
+
+        std::pair<int, int> randomRange() {
+            int L, R;
+            L = distr(rng) % n;
+            do {
+                R = distr(rng) % n;
+            } while(R == L);
+            if(R < L)
+                std::swap(L, R);
+            return {L, R};
+        }
+
+        // reverses random range in order
+        chromo mutate() {
+            std::pair<int, int> range = randomRange();
+            chromo mutated = *this;
+            std::reverse(mutated.order.begin()+range.first, mutated.order.begin()+range.second);
+            mutated.value = mutated.cost();
+            return mutated;
+        }
+
+        // stick random range from one chromo to another and vise-versa
+        std::pair<chromo, chromo> cross(chromo& another) {
+            chromo F_cross, S_cross;
+            std::pair<int, int> range = randomRange();
+            int L = range.first, R = range.second;
+
+            //cross in current chromo
+            for(int i=0;i<n;++i) {
+                bool present = false;
+                for(int j=L;j<=R && !present ;++j)
+                    if(another.order[j] == order[i])
+                        present = true;
+                if(!present)
+                    F_cross.order.push_back(order[i]);
+            }
+            for(int i=L;i<=R;++i)
+                F_cross.order.push_back(another.order[i]);
+
+
+            //cross in another chromo
+            for(int i=0;i<n;++i) {
+                bool present = false;
+                for(int j=L;j<=R && !present ;++j)
+                    if(order[j] == another.order[i])
+                        present = true;
+                if(!present)
+                    S_cross.order.push_back(another.order[i]);
+            }
+            for(int i=L;i<=R;++i)
+                S_cross.order.push_back(order[i]);
+
+            F_cross.n = (int)F_cross.order.size();
+            S_cross.n = (int)S_cross.order.size();
+            F_cross.value = F_cross.cost();
+            S_cross.value = S_cross.cost();
+            return {F_cross, S_cross};
+        }
+
+        double cost() {
+            double _cost = 0.00;
+            for(int i=0;i<n;++i) 
+                _cost += dist_matrix[order[i]][order[(i+1) % n]];
+            return _cost;
+        }
+
+        void print() {
+            std::cout << "cost : " << value << "\n";
+            for(int i=0;i<n;++i)
+                std::cout << order[i] << " ";
+            std::cout << "\n";
+        }
+
+        bool operator < (chromo& A) {
+            double this_cost = value;
+            double A_cost = A.value;
+            return this_cost < A_cost;
+        }
+};
+
+
+
+class mark1 {
+    int ITER = 50;
+    int N_chromosomes = 20; // end selection count
+    int M_count = 5; // mutations count
+    int C_count = 10; // cross over count
+    chromo BEST;
+    public:
+        mark1() {
+            ;
+        }
+        mark1(int N, int M, int C, int I) {
+            N_chromosomes = N;
+            M_count = M;
+            C_count = C;
+            ITER = I;
+        }
+
+        std::pair<int, int> randomInd(int mod) {
+            int L, R;
+            L = distr(rng) % mod;
+            do {
+                R = distr(rng) % mod;
+            } while(R == L);
+            if(R < L)
+                std::swap(L, R);
+            return {L, R};
+        }
+
+        void boot() {
+            std::vector<chromo> population;
+            for(int i=0;i<N_chromosomes;++i) {
+                chromo T = chromo(N_cities);
+                population.push_back(T);
+            }
+            BEST = population[0];
+            for(int i=0;i<N_chromosomes;++i) {
+                if(BEST.value > population[i].value)
+                    BEST = population[i];
+            }
+            BEST.print();
+            sort(population.begin(), population.end());
+            int iteration = 0;
+            while (iteration < ITER) {
+                // cross 
+                for(int i=0;i<C_count;++i) {
+                    std::pair<int, int> ind = randomInd((int)population.size() / 3);
+                    std::pair<chromo, chromo> product = population[ind.first].cross(population[ind.second]);
+                    population.push_back(product.first);
+                    population.push_back(product.second);
+                }
+
+                //mutate
+                for(int i=0;i<M_count;++i) {
+                    int randomIndex = distr(rng) % ((int)population.size() / 3);
+                    chromo mutated = population[randomIndex].mutate();
+                    population.push_back(mutated);
+                }
+
+                //putting some random chromosomes 
+                for(int i=0;i<10;++i)
+                    population.push_back(chromo(N_cities));
+
+                //sort accoring to cost
+                sort(population.begin(), population.end());
+
+                //select best N
+                while((int)population.size() > N_chromosomes) 
+                    population.pop_back();
+
+                //update BEST
+                if(BEST.value > population[0].value) {
+                    BEST = population[0];
+                    BEST.print();
+                }
+                
+                std::cout << "[+] Iteration count : " << iteration << "\n";
+                iteration ++;
+            }
+            BEST.print();
+        }
+};
+
