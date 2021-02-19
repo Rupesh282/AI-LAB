@@ -3,6 +3,7 @@
 #include <random>
 #include <chrono>
 #include <algorithm>
+#define _TIME_ 299
 
 
 //over-all outline for genetic algo : 
@@ -25,7 +26,7 @@ std::vector<std::vector<double>> dist_matrix;
 
 //random generator
 std::mt19937 rng(std::chrono::steady_clock::now().time_since_epoch().count());
-std::uniform_int_distribution<int> distr(0, 99);
+std::uniform_int_distribution<int> distr(0, 499);
 
 
 /*
@@ -50,7 +51,7 @@ class chromo {
             value = cost();
         }
 
-        // gives a random range {L, R} such that L < R 
+        // gives a random range {L, R} such that L < R and R < n
         std::pair<int, int> randomRange() {
             int L, R;
             L = distr(rng) % n;
@@ -169,6 +170,9 @@ class geneticModel0 {
 
         // below function actually starts our simulation
         void boot() {
+            //start measuring the time from here
+            auto start = std::chrono::high_resolution_clock::now();
+
             // first create some random population
             std::vector<chromo> population;
             for(int i=0;i<N_chromosomes;++i) {
@@ -184,9 +188,9 @@ class geneticModel0 {
 
             sort(population.begin(), population.end());
 
-            int iteration = 0;
+            //int iteration = 0;
             //iterate for ITER no. of times
-            while (iteration < ITER) {
+            while (true) {
                 // do cross over
                 for(int i=0;i<C_count;++i) {
                     std::pair<int, int> ind = randomInd((int)population.size() / 3);
@@ -203,7 +207,8 @@ class geneticModel0 {
                 }
 
                 //putting some random chromosomes 
-                for(int i=0;i<10000;++i)
+                int randomInserts = 100;
+                for(int i=0;i<randomInserts;++i)
                     population.push_back(chromo(N_cities));
 
                 //sort accoring to cost
@@ -220,7 +225,17 @@ class geneticModel0 {
                 }
                 
                 // std::cout << "[+] Iteration count : " << iteration << "\n";
-                iteration ++;
+                // iteration ++;
+
+                //check current time
+                auto end = std::chrono::high_resolution_clock::now();
+
+                //find duration from start
+                auto duration = std::chrono::duration_cast<std::chrono::seconds>(end - start).count();
+                
+                if(duration > _TIME_)
+                    break;
+                //std::cout << "duration : " << duration << " seconds." << "\n";
             }
             BEST.print();
             /* done */
