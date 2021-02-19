@@ -138,9 +138,9 @@ class chromo {
 
 class geneticModel0 {
     int ITER = 50; // default value for iteration
-    int N_chromosomes = 20; // end selection count
-    int M_count = 5; // mutations count
-    int C_count = 10; // cross over count
+    int N_chromosomes = 250; // end selection count
+    int M_count = 500; // mutations count
+    int C_count = 1000; // cross over count
     chromo BEST; // this will keep track of best chromosome/solution
     public:
 
@@ -203,7 +203,7 @@ class geneticModel0 {
                 }
 
                 //putting some random chromosomes 
-                for(int i=0;i<10;++i)
+                for(int i=0;i<10000;++i)
                     population.push_back(chromo(N_cities));
 
                 //sort accoring to cost

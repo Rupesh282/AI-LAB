@@ -2,10 +2,13 @@
 
 # To compile the main.cc , 
 run command :
-$ g++ main.cc -o main
+$ make compile
 
-to run main with input  file input.txt, 
+# To run the program with input 'file' , 
 run command : 
-$ ./run.sh <inputfile>
+$ ./run.sh file
 
 # output will be generated in output.txt file
+
+#to clean up generated files
+$ make clean
