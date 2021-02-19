@@ -219,7 +219,7 @@ class geneticModel0 {
                     BEST.print();
                 }
                 
-                std::cout << "[+] Iteration count : " << iteration << "\n";
+                // std::cout << "[+] Iteration count : " << iteration << "\n";
                 iteration ++;
             }
             BEST.print();

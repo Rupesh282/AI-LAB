@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include "gen.h"
 
 int main() {
@@ -24,6 +25,8 @@ int main() {
     //initialize model
     geneticModel0 model(50, 20, 20, 10000);
 
+
+    std::cout << std::fixed << std::setprecision(5) ;
     //simulate
     model.boot();
 
