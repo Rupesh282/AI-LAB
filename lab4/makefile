@@ -1,8 +1,8 @@
 run : main
 	./main < euc_100
 
-main : a.cc gen.h
-	g++ a.cc -o main
+main : main.cc gen.h
+	g++ main.cc -o main
 
 clean: 
 	rm main

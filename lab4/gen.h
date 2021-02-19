@@ -14,16 +14,24 @@
 
 
 
-int N_cities;
+// total no. of cities
+int N_cities; 
 
 std::string E_type;
 std::vector<std::pair<double, double>> cities;
-std::vector<std::vector<double>> dist_matrix;
 
+// distance matrix
+std::vector<std::vector<double>> dist_matrix; 
+
+//random generator
 std::mt19937 rng(std::chrono::steady_clock::now().time_since_epoch().count());
 std::uniform_int_distribution<int> distr(0, 99);
 
 
+/*
+ * class for chromosome
+ * Each chromosome contains a permutation of order of cities we visit
+ */
 class chromo {
     public:
         int n;
@@ -36,11 +44,13 @@ class chromo {
         chromo(int N) {
             n = N;
             order.resize(n);
+            //order vector is intialized with 0 .. n-1 
             std::iota(order.begin(), order.end(), 0);
             shuffle(order.begin(), order.end(), rng);
             value = cost();
         }
 
+        // gives a random range {L, R} such that L < R 
         std::pair<int, int> randomRange() {
             int L, R;
             L = distr(rng) % n;
@@ -52,7 +62,7 @@ class chromo {
             return {L, R};
         }
 
-        // reverses random range in order
+        // mutation : reverses random range in order
         chromo mutate() {
             std::pair<int, int> range = randomRange();
             chromo mutated = *this;
@@ -61,7 +71,7 @@ class chromo {
             return mutated;
         }
 
-        // stick random range from one chromo to another and vise-versa
+        // crossover : stick random range from one chromo to another and vise-versa
         std::pair<chromo, chromo> cross(chromo& another) {
             chromo F_cross, S_cross;
             std::pair<int, int> range = randomRange();
@@ -99,6 +109,7 @@ class chromo {
             return {F_cross, S_cross};
         }
 
+        // below function finds cost of a tour 
         double cost() {
             double _cost = 0.00;
             for(int i=0;i<n;++i) 
@@ -106,6 +117,7 @@ class chromo {
             return _cost;
         }
 
+        // print current chromosome data
         void print() {
             std::cout << "cost : " << value << "\n";
             for(int i=0;i<n;++i)
@@ -113,6 +125,8 @@ class chromo {
             std::cout << "\n";
         }
 
+        // operator overloading for <chromo> objects which
+        // we will use while sorting
         bool operator < (chromo& A) {
             double this_cost = value;
             double A_cost = A.value;
@@ -122,23 +136,26 @@ class chromo {
 
 
 
-class mark1 {
-    int ITER = 50;
+class geneticModel0 {
+    int ITER = 50; // default value for iteration
     int N_chromosomes = 20; // end selection count
     int M_count = 5; // mutations count
     int C_count = 10; // cross over count
-    chromo BEST;
+    chromo BEST; // this will keep track of best chromosome/solution
     public:
-        mark1() {
+
+        geneticModel0() {
             ;
         }
-        mark1(int N, int M, int C, int I) {
+
+        geneticModel0(int N, int M, int C, int I) {
             N_chromosomes = N;
             M_count = M;
             C_count = C;
             ITER = I;
         }
 
+        // below function returns random {L, R} random where R < mod and L < R
         std::pair<int, int> randomInd(int mod) {
             int L, R;
             L = distr(rng) % mod;
@@ -150,7 +167,9 @@ class mark1 {
             return {L, R};
         }
 
+        // below function actually starts our simulation
         void boot() {
+            // first create some random population
             std::vector<chromo> population;
             for(int i=0;i<N_chromosomes;++i) {
                 chromo T = chromo(N_cities);
@@ -162,10 +181,13 @@ class mark1 {
                     BEST = population[i];
             }
             BEST.print();
+
             sort(population.begin(), population.end());
+
             int iteration = 0;
+            //iterate for ITER no. of times
             while (iteration < ITER) {
-                // cross 
+                // do cross over
                 for(int i=0;i<C_count;++i) {
                     std::pair<int, int> ind = randomInd((int)population.size() / 3);
                     std::pair<chromo, chromo> product = population[ind.first].cross(population[ind.second]);
@@ -173,7 +195,7 @@ class mark1 {
                     population.push_back(product.second);
                 }
 
-                //mutate
+                // do mutations in population
                 for(int i=0;i<M_count;++i) {
                     int randomIndex = distr(rng) % ((int)population.size() / 3);
                     chromo mutated = population[randomIndex].mutate();
@@ -201,6 +223,7 @@ class mark1 {
                 iteration ++;
             }
             BEST.print();
+            /* done */
         }
 };
 

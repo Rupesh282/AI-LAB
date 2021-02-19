@@ -1,65 +1,31 @@
-#include <bits/stdc++.h>
-#include <random>
-#include <chrono>
-
-std::mt19937 rng(std::chrono::steady_clock::now().time_since_epoch().count());
-
-std::string E_type;
-int N;
-std::vector<std::pair<int, std::pair<double, double>>> co_ord;
-std::vector<std::vector<double>> cost_mat;
-
-
-
-double _cost() {
-    double cost = 0;
-    
-    for(int i=1;i<N;++i)
-        cost += cost_mat[co_ord[i-1].first][co_ord[i].first];
-    cost += cost_mat[co_ord[N-1].first][co_ord[0].first];
-
-    return cost;
-}
-
-void print_tour() {
-    for(int i=0;i<N;++i)
-        std::cout << co_ord[i].first << " ";
-    std::cout << "\n";
-}
+#include <iostream>
+#include "gen.h"
 
 int main() {
-    std::cin >> E_type >> N;
-    for(int i=0;i<N;++i) {
+
+    //take input
+    std::cin >> E_type >> N_cities;
+
+    // take co-ordinates of cities
+    for(int i=0;i<N_cities;++i) {
         double x, y; std::cin >> x >> y;
-        co_ord.push_back({i, {x, y}});
+        cities.push_back({x, y});
     }
 
-    cost_mat.assign(N, std::vector<double>());
-
-    for(int i=0;i<N;++i) {
-        for(int j=0;j<N;++j) {
+    // take input of distance matrix
+    dist_matrix.resize(N_cities);
+    for(int i=0;i<N_cities;++i) {
+        for(int j=0;j<N_cities;++j) {
             double d; std::cin >> d;
-            cost_mat[i].push_back(d);
+            dist_matrix[i].push_back(d);
         }
     }
 
-    double in_cost = _cost();
+    //initialize model
+    geneticModel0 model(50, 20, 20, 10000);
 
-    std:: cout << "cur best tour : " << in_cost << "\n";
-    print_tour();
-
-
-    for(int i=0;i<250;++i) {
-        shuffle(co_ord.begin(), co_ord.end(), rng);
-        double cur_cost = _cost();
-        //std::cerr << cur_cost << "\n";
-        if(cur_cost < in_cost) {
-            in_cost = cur_cost;
-            std:: cout << "cur best tour : " << in_cost << "\n";
-            print_tour();
-        }
-    }
+    //simulate
+    model.boot();
 
     return 0;
 }
-
