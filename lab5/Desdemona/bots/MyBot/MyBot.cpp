@@ -108,7 +108,8 @@ returnNode dfs(MMnode& parNode, bool type, int depth, Move move) {
     }
 
     list<Move> moves = curNode.board.getValidMoves(curNode.turn);
-    returnNode curReturn(curNode.Hvalue, type, move);
+    int tempHvalue = (type == 0 ? -1e9 : 1e9);
+    returnNode curReturn(tempHvalue, type, Move(-1, -1));
 
     for(auto& mv : moves) {
         returnNode res = dfs(curNode, type^isInit^1, depth+(isInit^1), mv);
@@ -116,11 +117,19 @@ returnNode dfs(MMnode& parNode, bool type, int depth, Move move) {
             //appha / max
             if(res.Hvalue > curReturn.Hvalue)
                 curReturn.Hvalue = res.Hvalue, curReturn.move = new Move(mv);
+            //else
+                //break;
         } else {
             //beta / min
             if(res.Hvalue < curReturn.Hvalue) 
                 curReturn.Hvalue = res.Hvalue, curReturn.move = new Move(mv);
+            //else
+                //break;
         }
+    }
+    if(move.x == -1 && move.y == -1) {
+        if(moves.size() > 0)
+            curReturn.move = &(*moves.begin());
     }
     return curReturn;
 }
@@ -129,6 +138,7 @@ returnNode dfs(MMnode& parNode, bool type, int depth, Move move) {
 Move MyBot::play( const OthelloBoard& board )
 {
     board.print( turn );
+    cout << "without alphabita : " << turn << "\n";
 
     MMnode parNode(board, turn);
     bool type = 0; // start as alpha 
