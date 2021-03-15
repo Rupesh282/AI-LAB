@@ -9,6 +9,7 @@
 #include "OthelloBoard.h"
 #include "OthelloPlayer.h"
 #include <cstdlib>
+#include <functional>
 using namespace std;
 using namespace Desdemona;
 
@@ -34,27 +35,44 @@ MyBot::MyBot( Turn turn )
 {
 }
 
-const int D = 4;
+const int D = 7;
 Turn TURN;
+#define TREE 0
+#define CurH 0
 
 Turn flip(Turn turn) {
     return (turn == BLACK ? RED : BLACK);
 }
 
-int H(OthelloBoard board) {
-    int corners = 0;
-    corners += (board.get(0, 0) == TURN) * 5;
-    corners += (board.get(7, 0) == TURN) * 5;
-    corners += (board.get(0, 7) == TURN) * 5;
-    corners += (board.get(7, 7) == TURN) * 5;
-    return board.getBlackCount() - board.getRedCount() + corners;
+/*
+ *All heuristics
+ */
+int H(OthelloBoard board, int which) {
+    function<int(OthelloBoard board)> F[3];
+
+    F[0] = [&](OthelloBoard board)->int {
+        int corners = 0;
+        corners += (board.get(0, 0) == TURN) * 5;
+        corners += (board.get(7, 0) == TURN) * 5;
+        corners += (board.get(0, 7) == TURN) * 5;
+        corners += (board.get(7, 7) == TURN) * 5;
+        return board.getBlackCount() - board.getRedCount() + corners;
+    };
+
+    F[1] = [&](OthelloBoard board)->int {
+        return (int)board.getValidMoves(TURN).size() - (int)board.getValidMoves(flip(BLACK)).size();
+    };
+
+    F[2] = [&](OthelloBoard board)->int {
+        return board.getBlackCount() - board.getRedCount(); 
+    };
+
+    return F[which](board);
 }
 
-int H1(OthelloBoard board) {
-    return (int)board.getValidMoves(TURN).size() - (int)board.getValidMoves(flip(BLACK)).size();
-}
-
-
+/*
+ *class for minimax tree node
+ */
 class MMnode {
     public:
         OthelloBoard board;
@@ -64,14 +82,17 @@ class MMnode {
         MMnode(OthelloBoard board, Turn turn) {
             this->board = board;
             this->turn = turn;
-            Hvalue = H(board);
+            Hvalue = H(board, CurH);
         }
 
         void updateH() {
-            this->Hvalue = H(board);
+            this->Hvalue = H(board, CurH);
         }
 };
 
+/*
+ *class for returnvalue of dfs function for minimax
+ */
 class returnNode {
     public: 
         int Hvalue;
@@ -99,11 +120,23 @@ void printMove(Move move) {
 //type = 0 : alpa / max
 //type = 1 : beta / min
 
+
+/*
+ *minimax algo implementation
+ */
 returnNode dfs(MMnode parNode, bool type, int depth, Move move) {
     bool isInit = (move.x == -2 && move.y == -2);
 
     MMnode curNode(parNode.board, parNode.turn);
     if(!isInit) {
+
+        if(TREE) {
+            cerr << "cur move : " << "\n";
+            cerr << "[ x, y ] : " << move.x << ", " << move.y << endl;
+            cerr << "cur depth : " << depth << "\n";
+            cerr << "childrens : " << "\n";
+        }
+
         curNode.board.makeMove(curNode.turn, move);
         curNode.turn = flip(parNode.turn);
         curNode.updateH();
@@ -118,23 +151,28 @@ returnNode dfs(MMnode parNode, bool type, int depth, Move move) {
     returnNode curReturn(tempHvalue, type, Move(-1, -1));
 
     for(auto& mv : moves) {
-        returnNode res = dfs(curNode, type^isInit^1, depth+(isInit^1), mv);
+        returnNode res = dfs(curNode, type^isInit^1, depth+1, mv);
+        
+        if(TREE) {
+            cout << "[ x, y ] : " << move.x << ", " << move.y << endl;
+        }
+
         if(type == 0) {
             //appha / max
             if(res.Hvalue > curReturn.Hvalue)
                 curReturn.Hvalue = res.Hvalue, curReturn.move = new Move(mv);
-            //else
-                //break;
+            else
+                break;
         } else {
             //beta / min
             if(res.Hvalue < curReturn.Hvalue) 
                 curReturn.Hvalue = res.Hvalue, curReturn.move = new Move(mv);
-            //else
-                //break;
+            else
+                break;
         }
     }
     if(moves.size() == 0) {
-        curReturn.Hvalue = H(curNode.board);
+        curReturn.Hvalue = H(curNode.board, CurH);
     }
     return curReturn;
 }
