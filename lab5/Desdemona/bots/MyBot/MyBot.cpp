@@ -34,8 +34,14 @@ MyBot::MyBot( Turn turn )
 {
 }
 
-const int D = 4;
+const int D = 3;
 Turn TURN;
+bool TREE = 0;
+
+
+Turn flip(Turn turn) {
+    return (turn == BLACK ? RED : BLACK);
+}
 
 int H(OthelloBoard board) {
     int corners = 0;
@@ -46,9 +52,10 @@ int H(OthelloBoard board) {
     return board.getBlackCount() - board.getRedCount() + corners;
 }
 
-Turn flip(Turn turn) {
-    return (turn == BLACK ? RED : BLACK);
+int H1(OthelloBoard board) {
+    return (int)board.getValidMoves(TURN).size() - (int)board.getValidMoves(flip(BLACK)).size();
 }
+
 
 class MMnode {
     public:
@@ -99,6 +106,14 @@ returnNode dfs(MMnode parNode, bool type, int depth, Move move) {
 
     MMnode curNode(parNode.board, parNode.turn);
     if(!isInit) {
+
+        if(TREE) {
+            cerr << "cur move : " << "\n";
+            cerr << "[ x, y ] : " << move.x << ", " << move.y << endl;
+            cerr << "cur depth : " << depth << "\n";
+            cerr << "childrens : " << "\n";
+        }
+
         curNode.board.makeMove(curNode.turn, move);
         curNode.turn = flip(parNode.turn);
         curNode.updateH();
@@ -113,6 +128,11 @@ returnNode dfs(MMnode parNode, bool type, int depth, Move move) {
     returnNode curReturn(tempHvalue, type, Move(-1, -1));
 
     for(auto& mv : moves) {
+
+        if(TREE) {
+            cerr << "[ x, y ] : " << move.x << ", " << move.y << endl;
+        }
+
         returnNode res = dfs(curNode, type^isInit^1, depth+(isInit^1), mv);
         if(type == 0) {
             //appha / max
@@ -138,7 +158,8 @@ returnNode dfs(MMnode parNode, bool type, int depth, Move move) {
 Move MyBot::play( const OthelloBoard& board )
 {
     TURN = turn;
-    board.print( turn );
+    // board.print( turn );
+    TREE = 0;
 
     MMnode parNode(board, turn);
     bool type = 0; // start as alpha 

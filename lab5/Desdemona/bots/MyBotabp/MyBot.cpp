@@ -37,6 +37,10 @@ MyBot::MyBot( Turn turn )
 const int D = 4;
 Turn TURN;
 
+Turn flip(Turn turn) {
+    return (turn == BLACK ? RED : BLACK);
+}
+
 int H(OthelloBoard board) {
     int corners = 0;
     corners += (board.get(0, 0) == TURN) * 5;
@@ -46,9 +50,10 @@ int H(OthelloBoard board) {
     return board.getBlackCount() - board.getRedCount() + corners;
 }
 
-Turn flip(Turn turn) {
-    return (turn == BLACK ? RED : BLACK);
+int H1(OthelloBoard board) {
+    return (int)board.getValidMoves(TURN).size() - (int)board.getValidMoves(flip(BLACK)).size();
 }
+
 
 class MMnode {
     public:
@@ -138,7 +143,7 @@ returnNode dfs(MMnode parNode, bool type, int depth, Move move) {
 Move MyBot::play( const OthelloBoard& board )
 {
     TURN = turn;
-    board.print( turn );
+    // board.print( turn );
 
     MMnode parNode(board, turn);
     bool type = 0; // start as alpha 
