@@ -35,13 +35,14 @@ MyBot::MyBot( Turn turn )
 }
 
 const int D = 4;
+Turn TURN;
 
 int H(OthelloBoard board) {
     int corners = 0;
-    corners += (board.get(0, 0) == BLACK) * 5;
-    corners += (board.get(7, 0) == BLACK) * 5;
-    corners += (board.get(0, 7) == BLACK) * 5;
-    corners += (board.get(7, 7) == BLACK) * 5;
+    corners += (board.get(0, 0) == TURN) * 5;
+    corners += (board.get(7, 0) == TURN) * 5;
+    corners += (board.get(0, 7) == TURN) * 5;
+    corners += (board.get(7, 7) == TURN) * 5;
     return board.getBlackCount() - board.getRedCount() + corners;
 }
 
@@ -93,8 +94,8 @@ void printMove(Move move) {
 //type = 0 : alpa / max
 //type = 1 : beta / min
 
-returnNode dfs(MMnode& parNode, bool type, int depth, Move move) {
-    bool isInit = (move.x == -1 && move.y == -1);
+returnNode dfs(MMnode parNode, bool type, int depth, Move move) {
+    bool isInit = (move.x == -2 && move.y == -2);
 
     MMnode curNode(parNode.board, parNode.turn);
     if(!isInit) {
@@ -127,9 +128,8 @@ returnNode dfs(MMnode& parNode, bool type, int depth, Move move) {
                 //break;
         }
     }
-    if(move.x == -1 && move.y == -1) {
-        if(moves.size() > 0)
-            curReturn.move = &(*moves.begin());
+    if(moves.size() == 0) {
+        curReturn.Hvalue = H(curNode.board);
     }
     return curReturn;
 }
@@ -137,18 +137,16 @@ returnNode dfs(MMnode& parNode, bool type, int depth, Move move) {
 
 Move MyBot::play( const OthelloBoard& board )
 {
+    TURN = turn;
     board.print( turn );
-    cout << "without alphabita : " << turn << "\n";
 
     MMnode parNode(board, turn);
     bool type = 0; // start as alpha 
     int depth = 0;
-    Move move(-1, -1);
+    Move move(-2, -2);
 
     returnNode res = dfs(parNode, type, depth, move);
 
-
-    cout << "move played by black : " << res.move->x << ", " << res.move->y << endl;
     return *res.move;
 }
 
