@@ -119,7 +119,7 @@ void printMove(Move move) {
 
 
 
-//type = 0 : alpa / max
+//type = 0 : alpha / max
 //type = 1 : beta / min
 
 /*
@@ -159,7 +159,7 @@ returnNode dfs(MMnode parNode, bool type, int depth, Move move) {
 
         returnNode res = dfs(curNode, type^isInit^1, depth+1, mv);
         if(type == 0) {
-            //appha / max
+            //alpha / max
             if(res.Hvalue > curReturn.Hvalue)
                 curReturn.Hvalue = res.Hvalue, curReturn.move = new Move(mv);
             //else
