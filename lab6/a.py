@@ -11,7 +11,10 @@ x = df.iloc[:,:-1]
 y = df.iloc[:,-1]
 
 
-#TODO : scale
+x = StandardScaler().fit(x).transform(x)
+
+# converted to pd dataframe
+x = pd.DataFrame(x)
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=42)
 
